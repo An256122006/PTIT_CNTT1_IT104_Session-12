@@ -4,33 +4,22 @@ const Todolist = () => {
     private static idCount: number = 1;
     id: number;
     name: string;
-    job: string;
-    status: boolean;
+    address: string;
+    gioitinh:string;
     date: string;
 
-    constructor(name: string, job: string, status: boolean, date: string) {
+    constructor(name: string, address: string,gioitinh:string, date: string) {
       this.id = Person.idCount++;
-      this.job = job;
+      this.address = address;
+      this.gioitinh=gioitinh;
       this.name = name;
-      this.status = status;
       this.date = date;
     }
   }
-  function getDate(): string {
-    const now = new Date();
-    const day = String(now.getDate()).padStart(2, "0");
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const year = now.getFullYear();
-    const hours = String(now.getHours()).padStart(2, "0");
-    const minutes = String(now.getMinutes()).padStart(2, "0");
-    const seconds = String(now.getSeconds()).padStart(2, "0");
-
-    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-  }
   const users: Person[] = [];
-  users.push(new Person("An", "thiet ke giao dien", true, getDate()));
-  users.push(new Person("Bình", "thiet ke giao dien", false, getDate()));
-  users.push(new Person("Cường", "thiet ke giao dien", true, getDate()));
+  users.push(new Person("An", "ha noi", "name", "27/1/2003"));
+  users.push(new Person("Bình", "tp hcm", "nu", "27/1/2003"));
+  users.push(new Person("Cường", "da nang", "nam", "27/1/2003"));
 
   console.log(users);
 
@@ -40,9 +29,9 @@ const Todolist = () => {
         <thead>
           <th>STT</th>
           <th>Name</th>
-          <th>Ten cong viec</th>
-          <th>Trang thai</th>
-          <th>Thoi gian tao</th>
+          <th>Ngay sinh</th>
+          <th>gio tinh</th>
+          <th>dia chi</th>
           <th>Chuc nang</th>
         </thead>
         <tbody>
@@ -50,11 +39,9 @@ const Todolist = () => {
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>{user.name}</td>
-              <td>{user.job}</td>
-              <td><span className={`status ${user.status ? "done" : "pending"}`}>
-                {user.status ? "Hoàn thành" : "Chưa hoàn thành"}
-              </span></td>
               <td>{user.date}</td>
+              <td>{user.gioitinh}</td>
+              <td>{user.address}</td>
               <td>
                 <button className="edit">Sửa</button>
                 <button className="delete">Xóa</button>

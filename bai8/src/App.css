@@ -1,67 +1,51 @@
 table {
   width: 100%;
-  margin-top: 20px;
-  font-size: 14px;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 thead {
-  background: #f9fafb;
+  background-color: #f8fbfd;
+}
+
+th {
+  padding: 12px;
   text-align: left;
+  color: #6b7280; 
+  font-weight: 600;
 }
 
-th, td {
-  padding: 10px 12px;
-  border-bottom: 1px solid #e5e7eb;
+td {
+  padding: 12px;
+  border-top: 1px solid #f1f1f1;
+  color: #374151; 
 }
 
-tr:hover {
-  background: #f3f4f6;
-}
-.status {
-  padding: 3px 8px;
-  font-size: 12px;
-  display: inline-block;
+tr:nth-child(even) {
+  background-color: #ffffff;
 }
 
-.status.done {
-  background: #dcfce7;   
-  color: #16a34a;        
-  border: 1px solid #16a34a;
-  border-radius: 5px;
-}
-
-.status.pending {
-  background: #fee2e2;  
-  color: #dc2626;       
-  border: 1px solid #dc2626;
-  border-radius: 5px;
+tr:nth-child(odd) {
+  background-color: #ffffff;
 }
 
 button {
-  padding: 4px 10px;
+  padding: 6px 14px;
+  border-radius: 6px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 13px;
-  margin-right: 5px;
+  font-size: 14px;
 }
 
 button.edit {
-  background: #fef3c7;   
-  color: #d97706;        
-  border: 1px solid #facc15;
+  background-color: #f3f4f6; 
+  color: #374151;
 }
 
 button.delete {
-  background: #fee2e2;   
-  color: #dc2626;       
-  border: 1px solid #f87171;
-}
-
-button.edit:hover {
-  background: #fde68a;
-}
-
-button.delete:hover {
-  background: #fca5a5;
+  background-color: #ef4444; 
+  margin-left: 10px;
+  color: white;
 }
